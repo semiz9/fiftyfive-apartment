@@ -1,0 +1,16 @@
+{
+  "name": "Natur & Komfort nahe Wien – 90m²",
+  "short_name": "Semiz Kaltenleutgeben",
+  "description": "Schönes 90m² Apartment in Kaltenleutgeben nahe Wien. Für bis zu 6 Gäste.",
+  "start_url": "/",
+  "display": "standalone",
+  "background_color": "#0a2419",
+  "theme_color": "#196642",
+  "icons": [
+    {
+      "src": "/favicon.ico",
+      "sizes": "any",
+      "type": "image/x-icon"
+    }
+  ]
+}

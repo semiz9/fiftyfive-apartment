@@ -1,0 +1,9 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 44 44" fill="none">
+  <!-- House outline matching the Fiftyfive Apartments logo -->
+  <path d="M22 3L41 17V42H3V17L22 3Z" stroke="#1a1a1a" stroke-width="2.5" stroke-linejoin="round" fill="white"/>
+  <!-- 55 -->
+  <text x="22" y="31" font-family="Inter,Arial,sans-serif" font-size="13" font-weight="700"
+        fill="#1a1a1a" text-anchor="middle">55</text>
+  <!-- checkmark -->
+  <path d="M14 36L18 40L29 30" stroke="#1a1a1a" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"/>
+</svg>

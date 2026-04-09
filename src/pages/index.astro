@@ -1,0 +1,228 @@
+---
+import Layout from '../layouts/Layout.astro';
+import LanguageToggle from '../components/LanguageToggle.astro';
+import HeroSlider from '../components/HeroSlider.astro';
+import FeaturesGrid from '../components/FeaturesGrid.astro';
+import CheckTimes from '../components/CheckTimes.astro';
+import RealReviews from '../components/RealReviews.astro';
+import BookButton from '../components/BookButton.astro';
+import AddressMap from '../components/AddressMap.astro';
+
+const bookingUrl = 'https://www.airbnb.de/rooms/1334011307998790600?utm_source=google_maps';
+const whatsappUrl = 'https://wa.me/436765558100';
+const gmapsUrl = 'https://www.google.com/maps/dir/?api=1&destination=Gerngasse+2,+2391+Kaltenleutgeben,+%C3%96sterreich';
+---
+
+<Layout>
+  <LanguageToggle />
+
+  <!-- Section 1 · Hero Slider -->
+  <HeroSlider />
+
+  <!-- Section 2 · Description -->
+  <section id="beschreibung" class="py-20 px-4 bg-stone-50 dark:bg-stone-950">
+    <div class="max-w-5xl mx-auto">
+      <div class="flex flex-col lg:flex-row gap-10 items-start">
+
+        <!-- Text -->
+        <div class="flex-1">
+          <span class="inline-block text-[#FF5A5F] text-sm font-semibold tracking-widest uppercase mb-4">
+            <span data-de>Das Apartment</span>
+            <span data-en>The Apartment</span>
+          </span>
+          <h2 class="font-display text-3xl sm:text-4xl font-bold text-stone-900 dark:text-white mb-5">
+            <span data-de>90m² mitten in der Natur</span>
+            <span data-en>90m² in the heart of nature</span>
+          </h2>
+          <div class="space-y-4 text-stone-600 dark:text-stone-300 leading-relaxed">
+            <p>
+              <span data-de>
+                Unser geräumiges <strong class="text-stone-900 dark:text-white">90m² Apartment</strong> in der
+                <strong class="text-stone-900 dark:text-white">Gerngasse 2/2, 2391 Kaltenleutgeben</strong> bietet alles für
+                einen erholsamen Aufenthalt nahe Wien – umgeben von idyllischer Natur des Wienerwalds.
+              </span>
+              <span data-en>
+                Our spacious <strong class="text-stone-900 dark:text-white">90m² apartment</strong> at
+                <strong class="text-stone-900 dark:text-white">Gerngasse 2/2, 2391 Kaltenleutgeben</strong> offers everything for
+                a relaxing stay near Vienna – surrounded by the idyllic nature of the Vienna Woods.
+              </span>
+            </p>
+            <p>
+              <span data-de>
+                Die Unterkunft verfügt über <strong class="text-stone-900 dark:text-white">Self Check-in</strong> mit Schlüsselbox,
+                schnelles <strong class="text-stone-900 dark:text-white">WLAN mit 150 Mbit</strong>, eine voll ausgestattete
+                Küche und einen kostenlosen Parkplatz direkt vor dem Haus.
+              </span>
+              <span data-en>
+                The apartment features <strong class="text-stone-900 dark:text-white">self check-in</strong> with key box,
+                fast <strong class="text-stone-900 dark:text-white">WiFi at 150 Mbit</strong>, a fully equipped
+                kitchen and free parking directly in front of the building.
+              </span>
+            </p>
+          </div>
+        </div>
+
+        <!-- Quick-info card -->
+        <div class="lg:w-72 w-full bg-white dark:bg-stone-900 border border-stone-100 dark:border-stone-800 rounded-2xl p-6 shadow-md">
+          <p class="text-stone-400 text-xs font-semibold uppercase tracking-widest mb-4">
+            <span data-de>Auf einen Blick</span>
+            <span data-en>At a glance</span>
+          </p>
+          <ul class="space-y-3">
+            {[
+              { icon: '📐', de: '90m² Wohnfläche', en: '90m² living space' },
+              { icon: '👥', de: 'Bis zu 6 Gäste', en: 'Up to 6 guests' },
+              { icon: '🔑', de: 'Self Check-in', en: 'Self Check-in' },
+              { icon: '📶', de: 'WLAN 150 Mbit', en: 'WiFi 150 Mbit' },
+              { icon: '🍳', de: 'Voll ausgestattete Küche', en: 'Fully equipped kitchen' },
+              { icon: '🚗', de: 'Kostenloser Parkplatz', en: 'Free parking' },
+            ].map(item => (
+              <li class="flex items-center gap-3 text-sm text-stone-700 dark:text-stone-300">
+                <span class="text-base">{item.icon}</span>
+                <span data-de>{item.de}</span>
+                <span data-en>{item.en}</span>
+              </li>
+            ))}
+          </ul>
+          <a href={bookingUrl} target="_blank" rel="noopener noreferrer"
+            class="mt-5 flex items-center justify-center gap-2 bg-[#FF5A5F] hover:bg-[#e04e53] text-white font-semibold text-sm py-3 rounded-xl transition-colors w-full">
+            <span data-de>Verfügbarkeit prüfen</span>
+            <span data-en>Check availability</span>
+          </a>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Section 3 · Features -->
+  <FeaturesGrid />
+
+  <!-- Section 4 · Check times -->
+  <CheckTimes />
+
+  <!-- Section 5 · Reviews -->
+  <RealReviews />
+
+  <!-- Section 6 · CTA -->
+  <BookButton />
+
+  <!-- Address & Map -->
+  <AddressMap />
+
+  <!-- Footer -->
+  <footer class="bg-stone-950 text-stone-300">
+    <div class="max-w-6xl mx-auto px-4 py-12">
+      <div class="grid sm:grid-cols-2 lg:grid-cols-3 gap-8">
+
+        <!-- Host info -->
+        <div>
+          <div class="flex items-center gap-2.5 mb-3">
+            <svg class="w-7 h-7 flex-shrink-0" viewBox="0 0 44 44" fill="none">
+              <path d="M22 4L40 17V42H4V17L22 4Z" stroke="white" stroke-width="2.2" stroke-linejoin="round"/>
+              <text x="22" y="30" font-family="Inter,sans-serif" font-size="13" font-weight="700" fill="white" text-anchor="middle">55</text>
+              <path d="M14 35.5L18 39L28 30" stroke="white" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+            </svg>
+            <p class="font-bold text-white text-base">Fiftyfive Apartments</p>
+          </div>
+          <p class="text-stone-500 text-sm mb-5">
+            <span data-de>Gastgeber: Kuzey Semiz · Kaltenleutgeben</span>
+            <span data-en>Host: Kuzey Semiz · Kaltenleutgeben</span>
+          </p>
+
+          <address class="not-italic space-y-2.5 text-sm">
+            <p class="flex items-start gap-2">
+              <svg class="w-4 h-4 text-[#FF5A5F] mt-0.5 flex-shrink-0" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M17.657 16.657L13.414 20.9a1.998 1.998 0 01-2.827 0l-4.244-4.243a8 8 0 1111.314 0z"/>
+                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M15 11a3 3 0 11-6 0 3 3 0 016 0z"/>
+              </svg>
+              <a href={gmapsUrl} target="_blank" rel="noopener noreferrer" class="hover:text-white transition-colors">
+                <strong class="text-white">Gerngasse 2/2, 2391 Kaltenleutgeben</strong>
+              </a>
+            </p>
+            <p class="flex items-center gap-2">
+              <svg class="w-4 h-4 text-green-400 flex-shrink-0" fill="currentColor" viewBox="0 0 24 24">
+                <path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347z"/>
+                <path d="M12 0C5.373 0 0 5.373 0 12s5.373 12 12 12 12-5.373 12-12S18.627 0 12 0zm0 22C6.486 22 2 17.514 2 12S6.486 2 12 2s10 4.486 10 10-4.486 10-10 10z"/>
+              </svg>
+              <a href={whatsappUrl} target="_blank" rel="noopener noreferrer" class="hover:text-white transition-colors">
+                +43 676 5558100
+              </a>
+            </p>
+            <p class="flex items-center gap-2">
+              <svg class="w-4 h-4 text-stone-500 flex-shrink-0" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M3 8l7.89 5.26a2 2 0 002.22 0L21 8M5 19h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v10a2 2 0 002 2z"/>
+              </svg>
+              <a href="mailto:semizbnb@outlook.com" class="hover:text-white transition-colors">semizbnb@outlook.com</a>
+            </p>
+          </address>
+        </div>
+
+        <!-- Navigation -->
+        <div>
+          <p class="text-white font-semibold mb-4 text-sm uppercase tracking-wider">
+            <span data-de>Schnellzugriff</span>
+            <span data-en>Quick links</span>
+          </p>
+          <nav class="space-y-2.5 text-sm">
+            {[
+              { href: '#beschreibung', de: 'Das Apartment', en: 'The Apartment' },
+              { href: '#features',     de: 'Ausstattung',   en: 'Amenities' },
+              { href: '#times',        de: 'An- & Abreise', en: 'Check-in & out' },
+              { href: '#reviews',      de: 'Bewertungen',   en: 'Reviews' },
+              { href: '#location',     de: 'Lage & Anfahrt',en: 'Location' },
+            ].map(link => (
+              <a href={link.href} class="block text-stone-400 hover:text-white transition-colors">
+                <span data-de>{link.de}</span>
+                <span data-en>{link.en}</span>
+              </a>
+            ))}
+          </nav>
+        </div>
+
+        <!-- Book -->
+        <div>
+          <p class="text-white font-semibold mb-4 text-sm uppercase tracking-wider">
+            <span data-de>Jetzt buchen</span>
+            <span data-en>Book now</span>
+          </p>
+          <a href={bookingUrl} target="_blank" rel="noopener noreferrer"
+            class="inline-flex items-center gap-2 bg-[#FF5A5F] hover:bg-[#e04e53] text-white font-semibold text-sm px-5 py-3 rounded-xl transition-colors mb-4">
+            <span data-de>Auf Airbnb buchen</span>
+            <span data-en>Book on Airbnb</span>
+          </a>
+          <p class="text-stone-600 text-xs leading-relaxed mb-4">
+            <span data-de>Direktbuchung über Airbnb. Sicheres Bezahlen, voller Käuferschutz.</span>
+            <span data-en>Direct booking via Airbnb. Secure payment, full buyer protection.</span>
+          </p>
+          <a href={whatsappUrl} target="_blank" rel="noopener noreferrer"
+            class="inline-flex items-center gap-2 text-green-400 hover:text-green-300 text-sm transition-colors">
+            <svg class="w-4 h-4" fill="currentColor" viewBox="0 0 24 24">
+              <path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347z"/>
+              <path d="M12 0C5.373 0 0 5.373 0 12s5.373 12 12 12 12-5.373 12-12S18.627 0 12 0zm0 22C6.486 22 2 17.514 2 12S6.486 2 12 2s10 4.486 10 10-4.486 10-10 10z"/>
+            </svg>
+            <span data-de>Fragen? WhatsApp</span>
+            <span data-en>Questions? WhatsApp</span>
+          </a>
+        </div>
+      </div>
+    </div>
+
+    <!-- Impressum bar -->
+    <div class="border-t border-stone-900 bg-black/40">
+      <div class="max-w-6xl mx-auto px-4 py-5">
+        <div class="flex flex-col sm:flex-row gap-2 sm:items-center sm:justify-between text-xs text-stone-600">
+          <p>
+            <strong class="text-stone-500">Impressum:</strong>
+            Kuzey Semiz &nbsp;|&nbsp;
+            <strong class="text-stone-500">GLN:</strong> 9110034468460 &nbsp;|&nbsp;
+            <strong class="text-stone-500">GISA:</strong> 38456497 &nbsp;|&nbsp;
+            <span data-de>Vermittlung Privatzimmer</span>
+            <span data-en>Private Room Brokerage</span>
+            &nbsp;|&nbsp; Gerngasse 2/2, 2391 Kaltenleutgeben
+          </p>
+          <p class="text-stone-700">© {new Date().getFullYear()} Fiftyfive Apartments</p>
+        </div>
+      </div>
+    </div>
+  </footer>
+</Layout>
