@@ -41,8 +41,18 @@ const avgRating = 4.8;
         <span data-en>What our guests say</span>
       </h2>
 
+      <!-- Superhost badge -->
+      <div class="flex flex-wrap justify-center gap-3 mt-5">
+        <div class="inline-flex items-center gap-2.5 bg-white dark:bg-stone-900 border border-stone-200 dark:border-stone-700 rounded-full px-5 py-2.5 shadow-sm">
+          <img src="/images/hd-airbnb-superhost-badge-logo-png-image-7017516947897882fy8exzval.png" alt="Airbnb Superhost" class="h-7 w-auto" />
+          <span class="text-stone-700 dark:text-stone-300 font-semibold text-sm">
+            <span data-de>Verifizierter Superhost</span>
+            <span data-en>Verified Superhost</span>
+          </span>
+        </div>
+
       <!-- Average rating badge -->
-      <div class="inline-flex items-center gap-2.5 mt-5 bg-white dark:bg-stone-900 border border-stone-200 dark:border-stone-700 rounded-full px-5 py-2.5 shadow-sm">
+      <div class="inline-flex items-center gap-2.5 bg-white dark:bg-stone-900 border border-stone-200 dark:border-stone-700 rounded-full px-5 py-2.5 shadow-sm">
         <span class="text-2xl font-bold text-stone-900 dark:text-white">{avgRating}</span>
         <div class="flex gap-0.5">
           {[1,2,3,4,5].map(s => (
@@ -57,6 +67,7 @@ const avgRating = 4.8;
           <span data-en>· Airbnb average</span>
         </span>
       </div>
+      </div><!-- end flex badges -->
     </div>
 
     <div class="grid sm:grid-cols-2 gap-5">

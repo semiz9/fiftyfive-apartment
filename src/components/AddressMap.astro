@@ -1,8 +1,6 @@
 ---
 const googleMapsUrl = 'https://www.google.com/maps/dir/?api=1&destination=Gerngasse+2,+2391+Kaltenleutgeben,+%C3%96sterreich';
-// OpenStreetMap embed – no API key needed, always works
-// Coordinates for Gerngasse 2, 2391 Kaltenleutgeben (~48.0972, 16.0680)
-const osmEmbed = 'https://www.openstreetmap.org/export/embed.html?bbox=16.048%2C48.077%2C16.088%2C48.117&layer=mapnik&marker=48.097%2C16.068';
+const mapEmbed = 'https://www.google.com/maps/embed?pb=!1m14!1m8!1m3!1d4380.781751360456!2d16.2094294!3d48.1209938!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x476da52cfade78cd%3A0x9ee15b7023cf1896!2sFiftyfive%20Apartment!5e1!3m2!1sde!2sat!4v1776009498961!5m2!1sde!2sat';
 ---
 
 <section id="location" class="py-20 px-4 bg-white dark:bg-stone-900/30">
@@ -25,7 +23,7 @@ const osmEmbed = 'https://www.openstreetmap.org/export/embed.html?bbox=16.048%2C
       <!-- OpenStreetMap embed -->
       <div class="lg:col-span-3 rounded-2xl overflow-hidden shadow-md border border-stone-100 dark:border-stone-800" style="height:360px;">
         <iframe
-          src={osmEmbed}
+          src={mapEmbed}
           width="100%"
           height="100%"
           style="border:0;"
@@ -78,8 +76,8 @@ const osmEmbed = 'https://www.openstreetmap.org/export/embed.html?bbox=16.048%2C
                 <path d="M3 4a1 1 0 00-1 1v10a1 1 0 001 1h1.05a2.5 2.5 0 014.9 0H10a1 1 0 001-1V5a1 1 0 00-1-1H3zM14 7a1 1 0 00-1 1v6.05A2.5 2.5 0 0115.95 16H17a1 1 0 001-1v-5a1 1 0 00-.293-.707l-2-2A1 1 0 0015 7h-1z"/>
               </svg>
             </div>
-            <span data-de>~25 Min. mit dem Auto von Wien</span>
-            <span data-en>~25 min. by car from Vienna</span>
+            <span data-de>~10 Min. mit dem Auto von Wien</span>
+            <span data-en>~10 min. by car from Vienna</span>
           </div>
           <div class="flex items-center gap-3 text-stone-600 dark:text-stone-300 text-sm">
             <div class="w-8 h-8 rounded-lg bg-emerald-50 dark:bg-emerald-900/20 flex items-center justify-center flex-shrink-0">
